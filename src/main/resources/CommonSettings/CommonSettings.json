@@ -1,0 +1,11 @@
+{
+  "islandSettings": {
+    "rowsCount": 1,
+    "columnsCount": 2
+  },
+  "lifeCycleSettings":{
+    "stopCondition": "",
+    "beatDurationMs": 1000,
+    "beatCount": 1000
+  }
+}

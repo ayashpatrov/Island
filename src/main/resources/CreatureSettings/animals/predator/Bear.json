@@ -1,0 +1,20 @@
+{
+  "icon": "\uD83D\uDC3B",
+  "weight": 500,
+  "speed": 2,
+  "litterCount": 1,
+  "fullSatiety": 80,
+  "eatingChance": {
+    "BOA": 80,
+    "EAGLE": 0,
+    "HORSE": 40,
+    "DEER": 80,
+    "RABBIT": 80,
+    "MOUSE": 90,
+    "GOAT": 70,
+    "SHEEP": 70,
+    "BOAR": 50,
+    "BUFFALO": 20,
+    "DUCK": 10
+  }
+}

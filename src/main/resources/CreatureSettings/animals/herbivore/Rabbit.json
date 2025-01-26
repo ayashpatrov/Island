@@ -1,0 +1,10 @@
+{
+  "icon": "\uD83D\uDC07",
+  "weight": 2,
+  "speed": 2,
+  "litterCount": 1,
+  "fullSatiety": 0.45,
+  "eatingChance": {
+    "GRASS": 100
+  }
+}

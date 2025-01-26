@@ -1,0 +1,11 @@
+{
+  "icon": "\uD83D\uDC01",
+  "weight": 0.05,
+  "speed": 1,
+  "litterCount": 1,
+  "fullSatiety": 0.01,
+  "eatingChance": {
+    "CATERPILLAR": 90,
+    "GRASS": 100
+  }
+}
