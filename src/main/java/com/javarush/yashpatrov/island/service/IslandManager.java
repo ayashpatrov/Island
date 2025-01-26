@@ -3,7 +3,6 @@ package main.java.com.javarush.yashpatrov.island.service;
 import main.java.com.javarush.yashpatrov.island.configuration.Settings;
 import main.java.com.javarush.yashpatrov.island.model.Island;
 import main.java.com.javarush.yashpatrov.island.model.enums.CreatureType;
-import main.java.com.javarush.yashpatrov.island.util.ConsoleRenderer;
 import main.java.com.javarush.yashpatrov.island.util.StatisticsRenderer;
 
 import java.util.ArrayList;
@@ -15,11 +14,10 @@ public class IslandManager {
     private static final int COLUMNS_COUNT = Settings.getInstance().getCommonSettings().getIslandSettings().getColumnsCount();
     private static final int ANIMALS_THREADS_COUNT = 16; // Магичесеое число, если сделать меньше 16 - всё сломается
     private static final int GRASS_THREADS_COUNT = 2; // Тоже магичесеое число, один поток на траву, другой на рендерер
-    private Settings settings = Settings.getInstance();
-    private static Island island;
+    private final Settings settings = Settings.getInstance();
 
     public void play() {
-        island = new Island(ROWS_COUNT, COLUMNS_COUNT);
+        Island island = new Island(ROWS_COUNT, COLUMNS_COUNT);
 
         ExecutorService executor = Executors.newFixedThreadPool(ANIMALS_THREADS_COUNT);
         List<Future<?>> generationPhase = new ArrayList<>();

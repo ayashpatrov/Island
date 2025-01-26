@@ -12,8 +12,8 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 public class LifeCycle implements Runnable {
     private static final int BEAT_COUNT = Settings.getInstance().getCommonSettings().getLifeCycleSettings().getBeatCount();
     private static final int BEAT_DURATIONS_MS = Settings.getInstance().getCommonSettings().getLifeCycleSettings().getBeatDurationMs();
-    private Island island;
-    private CreatureType creatureType;
+    private final Island island;
+    private final CreatureType creatureType;
 
     public LifeCycle(Island island, CreatureType creatureType) {
         this.island = island;
@@ -38,8 +38,8 @@ public class LifeCycle implements Runnable {
                     }
                 }
 
-                allAnimals.stream().forEach(x -> ((Animal) x).executeLifeCycle());
-                allAnimals.stream().forEach(x -> ((Animal) x).setIsFucking(false));
+                allAnimals.forEach(x -> ((Animal) x).executeLifeCycle());
+                allAnimals.forEach(x -> ((Animal) x).setFucking(false));
                 try {
                     Thread.sleep(BEAT_DURATIONS_MS);
                 } catch (InterruptedException e) {

@@ -53,9 +53,7 @@ public abstract class Plant extends Creature {
         CreatureFactory creatureFactory = new CreatureFactory();
         if (direction != null) {
             Location growingLocation = location;
-            //location.getNextNeighbor(direction, 0);
             for (int i = 0; i < litterCount; i++) {
-                //growingLocation.addCreature(creatureFactory.create(this.getClass(), growingLocation));
                 growingLocation.addCreature(creatureFactory.create(CreatureType.GRASS, growingLocation));
             }
         }

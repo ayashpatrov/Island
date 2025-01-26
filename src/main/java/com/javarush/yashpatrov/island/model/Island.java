@@ -1,9 +1,7 @@
 package main.java.com.javarush.yashpatrov.island.model;
 
-import main.java.com.javarush.yashpatrov.island.configuration.Settings;
-
 public class Island {
-    private Location[][] locations;
+    private final Location[][] locations;
 
     public Island(int rows, int columns) {
         this.locations = new Location[rows][columns];
@@ -18,7 +16,4 @@ public class Island {
     public Location[][] getLocations() {
         return this.locations;
     }
-
-
-
 }

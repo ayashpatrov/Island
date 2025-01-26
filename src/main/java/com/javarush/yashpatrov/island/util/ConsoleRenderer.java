@@ -8,7 +8,7 @@ import main.java.com.javarush.yashpatrov.island.model.enums.CreatureType;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class ConsoleRenderer implements Renderer {
-    private Island island;
+    private final Island island;
 
     public ConsoleRenderer(Island island) {
         this.island = island;
@@ -26,7 +26,7 @@ public class ConsoleRenderer implements Renderer {
                     for (CreatureType type: CreatureType.values()) {
                         renderCreaturesOnLocation(locations[row][column], type);
                     }
-                    System.out.printf("|");
+                    System.out.print("|");
                 }
                 System.out.println();
             }
@@ -36,7 +36,7 @@ public class ConsoleRenderer implements Renderer {
     private void renderCreaturesOnLocation(Location location, CreatureType creatureType) {
         ConcurrentLinkedQueue<Creature> creatures = location.getCreaturesByType(creatureType);
         if (creatures == null || creatures.isEmpty()) {
-            System.out.printf("     ");
+            System.out.print("     ");
         } else {
             System.out.print(creatures.peek().getIcon() + "-" + creatures.size() + " ");
         }

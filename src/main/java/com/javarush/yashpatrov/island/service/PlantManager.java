@@ -6,7 +6,7 @@ import main.java.com.javarush.yashpatrov.island.model.enums.CreatureType;
 import main.java.com.javarush.yashpatrov.island.model.plants.Grass;
 
 public class PlantManager implements Runnable {
-    private Island island;
+    private final Island island;
 
     public PlantManager(Island island) {
         this.island = island;

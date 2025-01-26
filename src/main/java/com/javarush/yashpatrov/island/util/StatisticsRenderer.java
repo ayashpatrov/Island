@@ -1,6 +1,5 @@
 package main.java.com.javarush.yashpatrov.island.util;
 
-import main.java.com.javarush.yashpatrov.island.configuration.Settings;
 import main.java.com.javarush.yashpatrov.island.model.Creature;
 import main.java.com.javarush.yashpatrov.island.model.Island;
 import main.java.com.javarush.yashpatrov.island.model.Location;
@@ -11,7 +10,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.ConcurrentMap;
 
 public class StatisticsRenderer implements Renderer {
-    private Island island;
+    private final Island island;
     public StatisticsRenderer(Island island) {
         this.island = island;
     }
@@ -43,7 +42,7 @@ public class StatisticsRenderer implements Renderer {
                     // я всегда печатаю вчерашний день.
                     Creature c = allAnimals.get(type).poll();
                     if (c != null) {
-                        if (allAnimals.get(type).size() > 0) {
+                        if (!allAnimals.get(type).isEmpty()) {
                             System.out.printf("%s-%s, ", c.getIcon(), allAnimals.get(type).size());
                         }
                     }

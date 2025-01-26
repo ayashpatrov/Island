@@ -1,15 +1,7 @@
 package main.java.com.javarush.yashpatrov.island.model;
 
 import main.java.com.javarush.yashpatrov.island.configuration.Settings;
-import main.java.com.javarush.yashpatrov.island.model.animals.Animal;
 import main.java.com.javarush.yashpatrov.island.model.enums.CreatureType;
-import main.java.com.javarush.yashpatrov.island.model.enums.Direction;
-import main.java.com.javarush.yashpatrov.island.util.CreatureFactory;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
 public abstract class Creature {
     protected String icon;

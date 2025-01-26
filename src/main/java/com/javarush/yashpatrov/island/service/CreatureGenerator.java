@@ -10,8 +10,8 @@ import java.util.Map;
 import java.util.Random;
 
 public class CreatureGenerator implements Runnable {
-    private Island island;
-    private CreatureType creatureType;
+    private final Island island;
+    private final CreatureType creatureType;
     public CreatureGenerator(Island island, CreatureType type) {
         this.island = island;
         this.creatureType = type;

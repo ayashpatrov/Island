@@ -1,5 +1,6 @@
 package main.java.com.javarush.yashpatrov.island.model.animals;
 
+import lombok.Setter;
 import main.java.com.javarush.yashpatrov.island.model.enums.Action;
 import main.java.com.javarush.yashpatrov.island.model.enums.CreatureType;
 import main.java.com.javarush.yashpatrov.island.model.Location;
@@ -9,12 +10,14 @@ import main.java.com.javarush.yashpatrov.island.util.CreatureFactory;
 import main.java.com.javarush.yashpatrov.island.util.RandomEvents;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.ConcurrentMap;
 
 public abstract class Animal extends Creature {
     protected double satiety;
     protected double fullSatiety;
-    private int speed;
+    private final int speed;
+    @Setter
     private boolean isFucking = false;
     protected final static double SATIETY_THRESHOLD = 0.8; // на основании этого коэффициента животное принимает решение есть или плодиться
     protected final static double HUNGER_STRENGTH = 0.1; // сколько процентов сытости животное теряет за ход
@@ -62,13 +65,15 @@ public abstract class Animal extends Creature {
         synchronized (location) {
             //Получить список классов, тех животных кого я могу есть.
             HashMap<CreatureType, Integer> eatingChance = getSettings().getEatingChance();
+
             //Получить список классов, тех животных, котрые представлены на клетке.
-            ConcurrentMap<CreatureType, Integer> creaturesRegister = location.getCreaturesRegister();
+            ConcurrentMap<CreatureType, ConcurrentLinkedQueue<Creature>> allAnimals = location.getAllCreatures();
+
             //Получить фактический список классов, кого я могу съеть.
             HashMap<CreatureType, Integer> whoIWillEat = new HashMap<>();
-            for (Map.Entry<CreatureType, Integer> record : creaturesRegister.entrySet()) {
+            for (Map.Entry<CreatureType, ConcurrentLinkedQueue<Creature>> record : allAnimals.entrySet()) {
                 if (eatingChance != null) {
-                    if (eatingChance.containsKey(record.getKey()) && record.getValue() >= 1) {
+                    if (eatingChance.containsKey(record.getKey()) && !record.getValue().isEmpty()) {
                         whoIWillEat.put(record.getKey(), eatingChance.get(record.getKey()));
                     }
                 } else {
@@ -132,10 +137,6 @@ public abstract class Animal extends Creature {
         } else {
             move();
         }
-    }
-
-    public void setIsFucking(boolean fucked) {
-        this.isFucking = fucked;
     }
 
     public boolean isFucking() {

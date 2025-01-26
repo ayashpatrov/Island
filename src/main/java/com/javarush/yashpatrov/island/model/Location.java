@@ -14,15 +14,13 @@ import java.util.concurrent.ConcurrentMap;
 
 public class Location {
     @Getter
-    private ConcurrentMap<CreatureType, Integer> creaturesRegister = new ConcurrentHashMap<>();
-    @Getter
-    private ConcurrentMap<CreatureType, ConcurrentLinkedQueue<Creature>> allCreatures = new ConcurrentHashMap<>();
+    private final ConcurrentMap<CreatureType, ConcurrentLinkedQueue<Creature>> allCreatures = new ConcurrentHashMap<>();
 
-    private Island island;
+    private final Island island;
     @Getter
-    private int row;
+    private final int row;
     @Getter
-    private int column;
+    private final int column;
     @Getter
     private static LocationSettings settings;
 
@@ -41,23 +39,16 @@ public class Location {
         ConcurrentLinkedQueue<Creature> creatureList = allCreatures.get(creature.getCreatureType()) != null ? allCreatures.get(creature.getCreatureType()) : new ConcurrentLinkedQueue<>();
         creatureList.add(creature);
         allCreatures.put(creature.getCreatureType(), creatureList);
-        if (creaturesRegister.containsKey(creature.getCreatureType())) {
-            creaturesRegister.put(creature.getCreatureType(), creaturesRegister.get(creature.getCreatureType()) + 1);
-        } else {
-            creaturesRegister.put(creature.getCreatureType(), 1);
-        }
-
     }
 
     public void removeCreature(Creature creature) {
         ConcurrentLinkedQueue<Creature> creatureList = allCreatures.get(creature.getCreatureType());
         creatureList.remove(creature);
-        creaturesRegister.put(creature.getCreatureType(), creaturesRegister.get(creature.getCreatureType()) - 1);
+        allCreatures.put(creature.getCreatureType(), creatureList);
     }
 
     public Creature removeCreature(CreatureType creatureType) {
         ConcurrentLinkedQueue<Creature> creatureList = allCreatures.get(creatureType);
-        creaturesRegister.put(creatureType, creaturesRegister.get(creatureType) - 1);
         Creature removedCreature = creatureList.remove();
         allCreatures.put(creatureType, creatureList);
 
@@ -179,6 +170,6 @@ public class Location {
 
         return filteredAnimals.isEmpty()
                 ? Optional.empty()
-                : Optional.of(filteredAnimals.get(filteredAnimals.size() - 1));
+                : Optional.of(filteredAnimals.getLast());
     }
 }
