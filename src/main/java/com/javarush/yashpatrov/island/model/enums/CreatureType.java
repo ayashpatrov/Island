@@ -16,5 +16,6 @@ public enum CreatureType {
     EAGLE,
     FOX,
     WOLF,
-    GRASS
+    GRASS,
+    TREE
 }

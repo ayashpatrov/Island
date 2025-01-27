@@ -1,5 +1,6 @@
 package main.java.com.javarush.yashpatrov.island.model;
 
+import main.java.com.javarush.yashpatrov.island.configuration.CreatureSettings;
 import main.java.com.javarush.yashpatrov.island.configuration.Settings;
 import main.java.com.javarush.yashpatrov.island.model.enums.CreatureType;
 
@@ -11,7 +12,7 @@ public abstract class Creature {
     protected CreatureSettings settings;
 
     public Creature(Location location, CreatureType creatureType) {
-        setCreatureSettings();
+        setCreatureSettings(creatureType);
         this.icon = settings.getIcon();
         this.weight = settings.getWeight();
         this.location = location;
@@ -39,8 +40,8 @@ public abstract class Creature {
         return this.getClass().getSimpleName();
     }
 
-    private void setCreatureSettings() {
-        settings = Settings.getInstance().getClassSettings(this.getClass(), CreatureSettings.class);
+    private void setCreatureSettings(CreatureType creatureType) {
+        settings = Settings.getInstance().getCommonSettings().getCreatureSettings().get(creatureType);
     }
 
     public CreatureSettings getSettings() {

@@ -1,6 +1,7 @@
 package main.java.com.javarush.yashpatrov.island.model;
 
 import lombok.Getter;
+import main.java.com.javarush.yashpatrov.island.configuration.LocationSettings;
 import main.java.com.javarush.yashpatrov.island.configuration.Settings;
 import main.java.com.javarush.yashpatrov.island.model.animals.Animal;
 import main.java.com.javarush.yashpatrov.island.model.enums.CreatureType;
@@ -155,8 +156,7 @@ public class Location {
     }
 
     private void setLocationSettings() {
-        settings = Settings.getInstance().getClassSettings(Location.class, LocationSettings.class);
-        settings = Settings.getInstance().getLocationSettings();
+        settings = Settings.getInstance().getCommonSettings().getLocationSettings();
     }
 
     public Optional<Animal> findPair(CreatureType creatureType) {

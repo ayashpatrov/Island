@@ -1,0 +1,246 @@
+{
+  "islandSettings": {
+    "rowsCount": 100,
+    "columnsCount": 20
+  },
+  "lifeCycleSettings": {
+    "stopCondition": "",
+    "beatDurationMs": 1000,
+    "beatCount": 1000
+  },
+  "locationSettings": {
+    "limits": {
+      "WOLF": 30,
+      "BOA": 30,
+      "FOX": 30,
+      "BEAR": 5,
+      "EAGLE": 20,
+      "HORSE": 20,
+      "DEER": 20,
+      "RABBIT": 150,
+      "MOUSE": 500,
+      "GOAT": 150,
+      "SHEEP": 140,
+      "BOAR": 50,
+      "BUFFALO": 10,
+      "DUCK": 200,
+      "CATERPILLAR": 1000,
+      "GRASS": 200,
+      "TREE": 1
+    },
+    "initialCounts": {
+      "WOLF": 50,
+      "BOA": 50,
+      "FOX": 50,
+      "BEAR": 50,
+      "EAGLE": 50,
+      "HORSE": 50,
+      "DEER": 50,
+      "RABBIT": 50,
+      "MOUSE": 50,
+      "GOAT": 50,
+      "SHEEP": 50,
+      "BOAR": 50,
+      "BUFFALO": 50,
+      "DUCK": 50,
+      "CATERPILLAR": 50,
+      "GRASS": 50,
+      "TREE": 50
+    }
+  },
+  "creatureSettings": {
+    "BOAR": {
+      "icon": "\uD83D\uDC17",
+      "weight": 400,
+      "speed": 2,
+      "litterCount": 1,
+      "fullSatiety": 50,
+      "eatingChance": {
+        "CATERPILLAR": 90,
+        "GRASS": 100
+      }
+    },
+    "BUFFALO": {
+      "icon": "\uD83D\uDC03",
+      "weight": 700,
+      "speed": 1,
+      "litterCount": 1,
+      "fullSatiety": 100,
+      "eatingChance": {
+        "GRASS": 100
+      }
+    },
+    "CATERPILLAR": {
+      "icon": "\uD83D\uDC1B",
+      "weight": 0.01,
+      "speed": 0,
+      "litterCount": 1,
+      "fullSatiety": 0,
+      "eatingChance": {
+        "GRASS": 100
+      }
+    },
+    "DEER": {
+      "icon": "\uD83E\uDD8C",
+      "weight": 300,
+      "speed": 4,
+      "litterCount": 1,
+      "fullSatiety": 50,
+      "eatingChance": {
+        "GRASS": 100
+      }
+    },
+    "DUCK": {
+      "icon": "\uD83E\uDD86",
+      "weight": 1,
+      "speed": 4,
+      "litterCount": 1,
+      "fullSatiety": 0.15,
+      "eatingChance": {
+        "CATERPILLAR": 90,
+        "GRASS": 100
+      }
+    },
+    "GOAT": {
+      "icon": "\uD83D\uDC10",
+      "weight": 60,
+      "speed": 3,
+      "litterCount": 1,
+      "fullSatiety": 10,
+      "eatingChance": {
+        "GRASS": 100
+      }
+    },
+    "HORSE": {
+      "icon": "\uD83D\uDC0E",
+      "weight": 400,
+      "speed": 4,
+      "litterCount": 1,
+      "fullSatiety": 60,
+      "eatingChance": {
+        "GRASS": 100
+      }
+    },
+    "MOUSE": {
+      "icon": "\uD83D\uDC01",
+      "weight": 0.05,
+      "speed": 1,
+      "litterCount": 1,
+      "fullSatiety": 0.01,
+      "eatingChance": {
+        "CATERPILLAR": 90,
+        "GRASS": 100
+      }
+    },
+    "RABBIT": {
+      "icon": "\uD83D\uDC07",
+      "weight": 2,
+      "speed": 2,
+      "litterCount": 1,
+      "fullSatiety": 0.45,
+      "eatingChance": {
+        "GRASS": 100
+      }
+    },
+    "SHEEP": {
+      "icon": "\uD83D\uDC11",
+      "weight": 70,
+      "speed": 3,
+      "litterCount": 1,
+      "fullSatiety": 15,
+      "eatingChance": {
+        "GRASS": 100
+      }
+    },
+    "BEAR": {
+      "icon": "\uD83D\uDC3B",
+      "weight": 500,
+      "speed": 2,
+      "litterCount": 1,
+      "fullSatiety": 80,
+      "eatingChance": {
+        "BOA": 80,
+        "EAGLE": 0,
+        "HORSE": 40,
+        "DEER": 80,
+        "RABBIT": 80,
+        "MOUSE": 90,
+        "GOAT": 70,
+        "SHEEP": 70,
+        "BOAR": 50,
+        "BUFFALO": 20,
+        "DUCK": 10
+      }
+    },
+    "BOA": {
+      "icon": "\uD83D\uDC0D",
+      "weight": 15,
+      "speed": 1,
+      "litterCount": 1,
+      "fullSatiety": 3,
+      "eatingChance": {
+        "FOX": 15,
+        "RABBIT": 20,
+        "MOUSE": 40,
+        "DUCK": 10
+      }
+    },
+    "EAGLE": {
+      "icon": "\uD83E\uDD85",
+      "weight": 6,
+      "speed": 3,
+      "litterCount": 1,
+      "fullSatiety": 1,
+      "eatingChance": {
+        "FOX": 10,
+        "RABBIT": 90,
+        "MOUSE": 90,
+        "DUCK": 80
+      }
+    },
+    "FOX": {
+      "icon": "\uD83E\uDD8A",
+      "weight": 8,
+      "speed": 2,
+      "litterCount": 1,
+      "fullSatiety": 2,
+      "eatingChance": {
+        "RABBIT": 70,
+        "MOUSE": 90,
+        "DUCK": 60,
+        "CATERPILLAR": 40
+      }
+    },
+    "WOLF": {
+      "icon": "\uD83D\uDC3A",
+      "weight": 50,
+      "speed": 3,
+      "litterCount": 1,
+      "fullSatiety": 8,
+      "eatingChance": {
+        "HORSE": 10,
+        "DEER": 15,
+        "RABBIT": 60,
+        "MOUSE": 80,
+        "GOAT": 60,
+        "SHEEP": 70,
+        "BOAR": 15,
+        "BUFFALO": 10,
+        "DUCK": 40
+      }
+    },
+    "GRASS": {
+      "icon": "☘\uFE0F",
+      "weight": 15,
+      "speed": 0,
+      "litterCount": 1
+    },
+    "TREE": {
+      "icon": "\uD83C\uDF32",
+      "weight": 1,
+      "speed": 0,
+      "litterCount": 1,
+      "fullSatiety": 0
+    }
+  }
+}

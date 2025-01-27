@@ -6,6 +6,7 @@ import main.java.com.javarush.yashpatrov.island.model.animals.herbivore.*;
 import main.java.com.javarush.yashpatrov.island.model.animals.predator.*;
 import main.java.com.javarush.yashpatrov.island.model.enums.CreatureType;
 import main.java.com.javarush.yashpatrov.island.model.plants.Grass;
+import main.java.com.javarush.yashpatrov.island.model.plants.Tree;
 
 public class CreatureFactory {
     public Creature create(CreatureType type, Location location) {
@@ -26,6 +27,7 @@ public class CreatureFactory {
             case FOX -> new Fox(location, type);
             case WOLF -> new Wolf(location, type);
             case GRASS -> new Grass(location, type);
+            case TREE -> new Tree(location, type);
         };
     }
 }

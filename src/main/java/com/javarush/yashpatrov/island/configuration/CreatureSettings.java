@@ -1,4 +1,4 @@
-package main.java.com.javarush.yashpatrov.island.model;
+package main.java.com.javarush.yashpatrov.island.configuration;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
