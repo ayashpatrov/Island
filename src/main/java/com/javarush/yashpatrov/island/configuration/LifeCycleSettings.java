@@ -9,4 +9,5 @@ public class LifeCycleSettings {
     private String stopCondition;
     private int beatDurationMs;
     private int beatCount;
+    private int threadsCount;
 }

@@ -1,12 +1,13 @@
 {
   "islandSettings": {
-    "rowsCount": 100,
-    "columnsCount": 20
+    "rowsCount": 10,
+    "columnsCount": 10
   },
   "lifeCycleSettings": {
     "stopCondition": "",
     "beatDurationMs": 1000,
-    "beatCount": 1000
+    "beatCount": 1000,
+    "threadsCount": 16
   },
   "locationSettings": {
     "limits": {
